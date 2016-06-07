@@ -1,0 +1,29 @@
+// This message describes the whole-body state of controller.
+//
+// A whole-body controller state is defined by the desired, actual, and
+// error of the whole-body state of the system. The description of
+// every element is defined in their respective messages.
+//
+// The utime specifies the time at which the trajectory is published.
+
+
+package dwl_lcmtypes;
+
+struct WholeBodyController_t
+{
+	// This represents the published time
+	int64_t utime;
+
+	// Desired whole-body state
+	WholeBodyState_t desired;
+
+	// Actual whole-body state
+	WholeBodyState_t actual;
+
+	// Error whole-body state
+	WholeBodyState_t error;
+
+	// Command state
+	int32_t num_joints;
+	JointCommand_t command[num_joints];
+}

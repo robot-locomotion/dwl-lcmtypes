@@ -1,0 +1,26 @@
+// This message describes the state of joint command.
+//
+// The state of each command (revolute or prismatic) is defined by:
+//  * the total command to the joint (Nm or N),
+//  * the feedforward command component (Nm or N), and
+//  * the feedback command component (Nm or N) 
+//
+// Each commanded joint is uniquely identified by its name
+
+
+package dwl_lcmtypes;
+
+struct JointCommand_t
+{
+	// Name of the joint
+	string name;
+
+	// Total joint command (i.e. feed-forward plus feed-back)
+	double total;
+
+	// Feed-forward component
+	double feedforward;
+
+	// Feed-back component
+	double feedback;
+}

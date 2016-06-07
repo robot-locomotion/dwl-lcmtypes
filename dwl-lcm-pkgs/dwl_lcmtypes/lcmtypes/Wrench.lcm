@@ -6,7 +6,12 @@ package dwl_lcmtypes;
 
 struct Wrench_t
 {
-    int64_t utime;
-    double force[3];
-    double torque[3];
+	// This represents the published time
+	int64_t utime;
+
+	// This represents the linear forces
+	Vector3d_t force;
+
+	// This represents the torque forces
+	Vector3d_t torque;
 }

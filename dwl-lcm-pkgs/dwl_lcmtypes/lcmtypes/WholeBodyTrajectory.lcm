@@ -1,0 +1,24 @@
+// This message describes a whole-body trajectory.
+//
+// A whole-body trajectory is defined by the actual state of the system,
+// and a sequence of states.
+// The description of every element is defined in their respective
+// messages. This state is described in respective time.
+//
+// The utime specifies the time at which the trajectory is published.
+
+
+package dwl_lcmtypes;
+
+struct WholeBodyTrajectory_t
+{
+	// This represents the published time
+	int64_t utime;
+
+	// The actual whole-body state
+	WholeBodyState_t actual;
+
+	// The whole-body trajectory
+	int32_t num_points;
+	WholeBodyState_t trajectory[num_points];
+}
