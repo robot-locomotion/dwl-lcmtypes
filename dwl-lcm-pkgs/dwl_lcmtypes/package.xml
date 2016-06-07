@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>dwl_lcmtypes</name>
+  <version>0.0.1</version>
+  <description>LCM types</description>
+
+  <author email="carlos.mastalli@iit.it">Carlos Mastalli</author>
+  <maintainer email="carlos.mastalli@iit.it">Carlos Mastalli</maintainer>
+
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>TODO</license>
+
+  <url type="website">https://github.com/iit-DLSLab/dwl-distro</url>
+  <url type="bugtracker">https://github.com/iit-DLSLab/dwl-distro/issues</url>
+
+  
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>catkin</run_depend>
+</package>

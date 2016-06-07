@@ -12,22 +12,24 @@
 // The header specifies the time at which the state is published.
 
 
-package dwl_msg;
+package dwl_lcmtypes;
 
 struct WholeBodyState_t
 {
-	# This represents the published time
+	// This represents the published time
 	int64_t utime;
 
-	# This represents the time state
-	float time
+	// This represents the time state
+	double time;
 
-	# This represents the base state (position, velocity, acceleration and effort)
-	BaseState_t[6] base
+	// This represents the base state (position, velocity, acceleration and effort)
+	BaseState_t base[6];
 
-	# This represents the joint state (position, velocity, acceleration and effort)
-	JointState_t[] joints
+	// This represents the joint state (position, velocity, acceleration and effort)
+	int32_t num_joints;
+	JointState_t joints[num_joints];
 
-	# This represents the end-effector state (cartesian position and contact forces)
-	ContactState_t[] contacts
+	// This represents the end-effector state (cartesian position and contact forces)
+	int32_t num_contacts;
+	ContactState_t contacts[num_contacts];
 }

@@ -2,11 +2,11 @@
 // its linear and angular parts.
 
 
-package dwl_msg;
+package dwl_lcmtypes;
 
 struct Wrench_t
 {
-    int64_t  utime;
+    int64_t utime;
     double force[3];
     double torque[3];
 }

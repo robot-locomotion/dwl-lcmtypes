@@ -9,16 +9,16 @@
 // Each joint is uniquely identified by its name
 
 
-package dwl_msg;
+package dwl_lcmtypes;
 
 struct JointState_t
 {
-	# Name of the joint
-	string name
+	// Name of the joint
+	string name;
 
-	# States of the joint
-	float position
-	float velocity
-	float acceleration
-	float effort
+	// States of the joint
+	double position;
+	double velocity;
+	double acceleration;
+	double effort;
 }

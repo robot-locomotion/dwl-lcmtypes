@@ -6,9 +6,9 @@
 // geometry_msgs/Point message instead.
 
 
-package dwl_msgs;
+package dwl_lcmtypes;
 
-struct Vector3_t
+struct Vector3d_t
 {
 	float x;
 	float y;

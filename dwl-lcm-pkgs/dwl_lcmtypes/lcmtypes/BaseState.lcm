@@ -15,24 +15,24 @@
 // identified with its name
 
 
-package dwl_msg;
+package dwl_lcmtypes;
 
 struct BaseState_t
 {
-	# Floating-base identifiers
-	int64_t AX=0
-	int64_t AY=1
-	int64_t AZ=2
-	int64_t LX=3
-	int64_t LY=4
-	int64_t LZ=5
+	// Floating-base identifiers
+	const int64_t AX=0;
+	const int64_t AY=1;
+	const int64_t AZ=2;
+	const int64_t LX=3;
+	const int64_t LY=4;
+	const int64_t LZ=5;
 
-	# Name and id of the floating-base joint
-	string name
-	int64_t id
+	// Name and id of the floating-base joint
+	string name;
+	int64_t id;
 
-	# States of the floating-base joint
-	float position
-	float velocity
-	float acceleration
+	// States of the floating-base joint
+	double position;
+	double velocity;
+	double acceleration;
 }
