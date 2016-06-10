@@ -45,7 +45,7 @@ if(CATKIN_CALL)
 else()
     # Installing catkin package.xml and dwl-config.cmake for dwl as pure cmake project
     install(FILES package.xml DESTINATION share/dwl_lcmtypes)
-    install(FILES "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/dwl/dwl_lcmtypes-config.cmake" DESTINATION share/dwl_lcmtypes/cmake)
+    install(FILES "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/cmake/dwl_lcmtypes/dwl_lcmtypes-config.cmake" DESTINATION share/dwl_lcmtypes/cmake)
 
 	# Creating a dwl-config.cmake file for the use from the build tree
 	set(DWL_LCMTYPES_INCLUDE_DIRS  ${INCLUDE_DIRS}
