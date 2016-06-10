@@ -338,7 +338,6 @@ macro(pods_config_search_paths)
 		#set where files should be output locally
 	    set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
 	    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
-	    set(INCLUDE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/include)
 	    set(PKG_CONFIG_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib/pkgconfig)
 		
 		#set where files should be installed to

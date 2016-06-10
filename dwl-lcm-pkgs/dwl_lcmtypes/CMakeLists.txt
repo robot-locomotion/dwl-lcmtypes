@@ -7,12 +7,14 @@ set(CATKIN_CALL "${CATKIN_DEVEL_PREFIX}")
 if(CATKIN_CALL)
 	message("Compiling dwl_lcmtypes as a Catkin project")
 	find_package(catkin REQUIRED)
+	set(INCLUDE_OUTPUT_PATH ${CATKIN_DEVEL_PREFIX}/include)
 else()
 	message("Compiling dwl_lcmtypes as a CMake project")
 	# Setting the output directories for libraries and executables
 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/lib)
 	set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/lib)
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY  ${CMAKE_SOURCE_DIR}/bin)
+	set(INCLUDE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/include)
 endif()
 
 # Building the dwl lcmtypes using a script from bot_core_lcmtypes packages
@@ -27,10 +29,7 @@ set(DEPENDENCIES_LIBRARIES  ${LCM_LIBRARIES})
 set(DEPENDENCIES_LIBRARY_DIRS  ${LCM_LIBRARY_DIRS})
 
 # Including directories
-set(INCLUDE_DIRS  ${INCLUDE_OUTPUT_PATH}/lcmtypes/c/lcmtypes
-				  ${INCLUDE_OUTPUT_PATH}/lcmtypes/cpp/lcmtypes
-				  ${INCLUDE_OUTPUT_PATH}/lcmtypes/java
-				  ${INCLUDE_OUTPUT_PATH}/lcmtypes/python)
+set(INCLUDE_DIRS  ${lcmtypes_gen_INCLUDE_DIRS})
 include_directories(${INCLUDE_DIRS})
 
 # Exporting the package for use from the build-tree
