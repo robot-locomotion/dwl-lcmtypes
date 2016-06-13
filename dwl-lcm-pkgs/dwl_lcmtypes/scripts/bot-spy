@@ -1,0 +1,16 @@
+#!/bin/sh
+CLASSPATH=`PKG_CONFIG_PATH=PKG_CONFIG_PATH:/home/cmastalli/ros_ws/packages/pronto-distro/build/lib/pkgconfig pkg-config --variable=classpath lcm-java`
+for d in . .. ../.. ../../.. ../../../.. "/home/cmastalli/dls_ws/devel/include/dwl_lcmtypes"; do
+  if [ -d $d/share/java ]; then
+    jd=$d/share/java
+    echo Checking $jd
+    for f in $jd/lcmtypes_*.jar $jd/lcmspy_plugins_*.jar; do
+      if [ -e $f ]; then
+        echo "   Found $f"
+        CLASSPATH=$CLASSPATH:$f
+      fi
+    done
+  fi
+done
+exec java -ea -cp $CLASSPATH lcm.spy.Spy $*
+
