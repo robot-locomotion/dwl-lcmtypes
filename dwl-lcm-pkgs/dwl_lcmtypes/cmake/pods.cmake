@@ -168,9 +168,9 @@ function(pods_install_python_script script_name python_module_or_file)
 
     # where do we install .py files to?
     set(python_install_dir 
-        ${CMAKE_INSTALL_PREFIX}/lib/python${pyversion}/dist-packages)
+        ${LIBRARY_INSTALL_PATH}/python${pyversion}/dist-packages)
     set(python_old_install_dir #todo: when do we get rid of this? 
-        ${CMAKE_INSTALL_PREFIX}/lib/python${pyversion}/site-packages)
+        ${LIBRARY_INSTALL_PATH}/python${pyversion}/site-packages)
         
     if (python_module_or_file MATCHES ".+\\.py") #ends with a .py
         get_filename_component(py_file ${python_module_or_file} ABSOLUTE)     
@@ -219,7 +219,7 @@ function(_pods_install_python_package py_src_dir py_module_name)
 
     # where do we install .py files to?
     set(python_install_dir 
-        ${CMAKE_INSTALL_PREFIX}/lib/python${pyversion}/dist-packages)
+        ${LIBRARY_INSTALL_PATH}/python${pyversion}/dist-packages)
 
     if(EXISTS "${py_src_dir}/__init__.py")
         #install the single module
@@ -335,11 +335,6 @@ endmacro()
 # manually.
 macro(pods_config_search_paths)
     if(NOT DEFINED __pods_setup)
-		#set where files should be output locally
-	    set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
-	    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
-	    set(PKG_CONFIG_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib/pkgconfig)
-		
 		#set where files should be installed to
 	    set(LIBRARY_INSTALL_PATH ${CMAKE_INSTALL_PREFIX}/lib)
 	    set(EXECUTABLE_INSTALL_PATH ${CMAKE_INSTALL_PREFIX}/bin)

@@ -416,8 +416,12 @@ function(lcmtypes_build_python)
         message(STATUS "Not building Python LCM type bindings (Can't find Python)")
         return()
     endif()
-
-    set(_lcmtypes_python_dir ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/python)
+    # which python version?
+    execute_process(COMMAND 
+        ${PYTHON_EXECUTABLE} -c "import sys; sys.stdout.write(sys.version[:3])"
+        OUTPUT_VARIABLE pyversion)
+    
+    set(_lcmtypes_python_dir ${LIBRARY_OUTPUT_PATH}/python${pyversion}/dist-packages)
     set(auto_manage_files YES)
 
     set(modewords PY_DEST_DIR)
@@ -486,6 +490,5 @@ macro(lcmtypes_build)
     # Adding the include directories
     set(lcmtypes_gen_INCLUDE_DIRS  ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/c
                                    ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/cpp
-				                   ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/java
-				                   ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/python)
+				                   ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/java)
 endmacro()
