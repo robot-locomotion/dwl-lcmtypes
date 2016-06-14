@@ -325,10 +325,10 @@ function(lcmtypes_build_java)
         return()
     endif()
     string(STRIP ${LCM_JAR_FILE} LCM_JAR_FILE)
-    set(LCMTYPES_JAR ${CMAKE_CURRENT_BINARY_DIR}/lcmtypes_${PROJECT_NAME}.jar)
+    set(LCMTYPES_JAR ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/share/java/lcmtypes_${PROJECT_NAME}.jar)
 
     # generate Java bindings for LCM types
-    set(_lcmtypes_java_dir ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/java)
+    set(_lcmtypes_java_dir ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/share/java)
     set(auto_manage_files YES)
 
     set(modewords JAVA_DEST_DIR)
@@ -392,7 +392,7 @@ function(lcmtypes_build_java)
         DEPENDS ${_lcmtypes_java_files} VERBATIM)
 
     # add a rule to build a .jar file from the .class files
-    add_custom_command(OUTPUT lcmtypes_${PROJECT_NAME}.jar COMMAND
+    add_custom_command(OUTPUT ${LCMTYPES_JAR} COMMAND
         ${JAVA_ARCHIVE} cf ${LCMTYPES_JAR} -C ${_lcmtypes_java_dir} . DEPENDS ${_lcmtypes_class_files} VERBATIM)
     add_custom_target(lcmtypes_${PROJECT_NAME}_jar ALL DEPENDS ${LCMTYPES_JAR})
 
@@ -490,5 +490,5 @@ macro(lcmtypes_build)
     # Adding the include directories
     set(lcmtypes_gen_INCLUDE_DIRS  ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/c
                                    ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/cpp
-				                   ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/java)
+				                   ${INCLUDE_OUTPUT_PATH}/${PROJECT_NAME}/share/java)
 endmacro()
