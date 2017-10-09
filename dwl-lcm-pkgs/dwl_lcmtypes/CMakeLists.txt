@@ -51,7 +51,7 @@ if(CATKIN_CALL)
 	catkin_package(
 		INCLUDE_DIRS ${INCLUDE_DIRS} ${DEPENDENCIES_INCLUDE_DIRS}
 		LIBRARIES ${PROJECT_NAME} 
-		DEPENDS system_lib ${DEPENDENCIES_LIBRARIES} ${DEPENDENCIES_LIBRARY_DIRS} ${DEPENDENCIES_INCLUDE_DIRS})
+		DEPENDS ${DEPENDENCIES_LIBRARIES} ${DEPENDENCIES_LIBRARY_DIRS} ${DEPENDENCIES_INCLUDE_DIRS})
 else()
     # Installing catkin package.xml and dwl-config.cmake for dwl as pure cmake project
     install(FILES package.xml DESTINATION share/dwl_lcmtypes)
