@@ -18,6 +18,7 @@ The DWL's LCM types are a set of message description which are compatible with D
 
 [![ScreenShot](https://j.gifs.com/zJEDWD.gif)](https://www.youtube.com/watch?v=ENHvCGrnr2g)
 
+The source code is released under a [BSD 3-Clause license](LICENSE).
 
 Software Overview
 ==============================================
@@ -26,5 +27,14 @@ The algorithms are built primarily in C/C++. The library uses a number of the lo
 The dwl-lcmtypes is a ROS packages with the following required dependencies:
 * [CMake](http://www.cmake.org) (version 2.8.3 or higher)
 * [DWL](https://github.com/robot-locomotion/dwl)
+* [lcm](https://github.com/lcm-proj/lcm)
 
 
+Building
+===============================================
+Before building the dwl_lcmtypes you need to install the dependencies of DWL. Additionally you have to build dwl with catkin.
+
+The dwl_rviz_plugin is a catkin project which can be built as:
+
+	cd your_ros_ws/
+	catkin_make
