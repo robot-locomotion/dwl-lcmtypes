@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(dwl_lcmtypes)
 
+message("Dynamic Whole-Body Locomotion (DWL) LCM types")
+message("Copyright (C) 2014-2018 Carlos Mastalli, <carlos.mastalli@laas.fr>")
+message("All rights reserved.")
+message("Released under the BSD 3-Clause License.")
 
 # Checking if the project is compiling with Catkin or CMake
 set(CATKIN_CALL "${CATKIN_DEVEL_PREFIX}")
