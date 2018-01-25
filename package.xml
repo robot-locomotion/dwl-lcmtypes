@@ -6,9 +6,7 @@
 
   <author email="carlos.mastalli@laas.fr">Carlos Mastalli</author>
   <maintainer email="carlos.mastalli@laas.fr">Carlos Mastalli</maintainer>
-
-  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
-  <license>TODO</license>
+  <license> BSD 3-Clause</license>
 
   <url type="website">https://github.com/iit-DLSLab/dwl-distro</url>
   <url type="bugtracker">https://github.com/iit-DLSLab/dwl-distro/issues</url>
